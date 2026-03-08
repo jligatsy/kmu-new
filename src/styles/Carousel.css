@@ -1,0 +1,164 @@
+.carousel {
+    height: 60vh;
+    width: 90vw;
+    margin-top: 3rem;
+    position: relative;
+    text-align: center;
+    min-height: 500px;
+}
+
+.carousel-image {
+    width: 90vw;
+    height: 40vh;
+    min-height: 400px;
+    object-fit: cover; 
+}
+
+.arrows{
+    top: 40%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    color: black;
+    border: none;
+    background: #faf6f2;
+    cursor: pointer;
+    position: absolute;
+    opacity: 0; /* hidden */
+    border-radius: 50%;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-bottom: 0.2rem;
+}
+
+.arrows.left{
+    left: 1.5rem;
+}
+
+.arrows.right{
+    right: 1.5rem;
+}
+
+.carousel:hover .arrows {
+  opacity: 70%;
+}
+
+.dots{
+    position:absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display:flex;
+    gap: 5px;
+}
+
+.dot {
+    height: 12px;
+    width: 12px;
+    background: #bbb;
+    border-radius: 50%;
+    display:inline-block;
+    cursor: pointer;
+}
+
+.dot.active {
+  background: black;
+}
+
+/* note: i think i want the dots to be inisde the image  */
+
+
+/* logo carousel !!*/
+
+/* ===== Logo Carousel (simplified) ===== */
+.logo-carousel {
+  width: 100%;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.logo-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.carousel-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.logo-track {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.logo-img {
+  width: 120px;
+  height: 80px;
+  object-fit: contain;
+  /* filter: grayscale(100%); */
+  opacity: 0.8;
+  transition: all 0.3s ease;
+}
+
+/* 
+.logo-img:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.05);
+} */
+
+/* ===== Simplified Arrows ===== */
+.arrow-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 1.8rem;    /* size of the < > symbols */
+  color: #333;
+  opacity: 0;           /* hidden by default */
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.carousel-wrapper:hover .arrow-btn {
+  opacity: 1;           /* show when hovering over carousel */
+}
+
+.arrow-btn.left {
+  left: 10px;
+}
+
+.arrow-btn.right {
+  right: 10px;
+}
+
+.arrow-btn:hover {
+  color: #000;          /* slightly darker on hover */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .logo-img {
+    width: 80px;
+    height: 60px;
+  }
+
+  .carousel-wrapper {
+    width: 90%;
+  }
+
+  .arrow-btn {
+    font-size: 1.5rem;
+  }
+}
+
+

@@ -1,0 +1,205 @@
+.kmu-ticker {
+  width: 100vw;
+  overflow: hidden;
+  border-top: 1px solid #F1C46D;
+  border-bottom: 1px solid #F1C46D;
+  background: #F7F7F7;
+}
+
+.kmu-ticker-text {
+  color: #023882;
+  display: inline-block;
+  white-space: nowrap;
+  font-size: 4rem;
+  padding: 16px 0;
+  animation: text-move 10s linear infinite;
+}
+
+@keyframes text-move {
+  from {
+    transform: translateX(-90%);
+  }
+  to {
+    transform: translateX(210%);
+  }
+}
+
+
+
+.home {  
+  min-height: auto;
+  margin: 0;
+  padding:0;
+
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+.counters {
+  background-color: #faf6f2;
+  width: 45vw;
+  height: 200px;
+  margin: 0 30% 5% 30%; /* top 0, sides 30%, bottom 5% */
+  border-radius: 20px;
+  /*mungkin perlu max-width n height*/
+  display:flex; 
+  align-items: center; /*vertically*/
+  justify-content: space-around; /*horizontally*/
+}
+
+.circle{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #fff;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: 700;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  text-align: center;
+  padding: 10px;
+  margin: 0.5rem;
+}
+
+.quality {
+  width: 80vw;
+  /* height: 50vh; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-card {
+  position: relative;
+  background: #e9eff6; /* light gray/blue background */
+  padding: 1.5rem;
+  border-radius: 10%;
+  width: 300px;
+  text-align: center;
+  font-family: sans-serif;
+  margin: 1.5rem;
+  /* box-shadow: 0 2px 8px rgba(0,0,0,0.15); */
+}
+
+/* Peel effect */
+.service-card::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 30px;
+  height: 30px;
+  background:
+    linear-gradient(135deg, #faf6f2 45%, transparent 46%) no-repeat,
+    linear-gradient(315deg, #fff 55%, transparent 56%) no-repeat; /* backside now matches page */
+  background-size: 100% 100%;
+  box-shadow: -3px -3px 6px rgba(0,0,0,0.05);
+  /* background: 
+    linear-gradient(150deg, #fff 40%, transparent 41%) no-repeat,
+    linear-gradient(315deg, #e9eff6 60%, transparent 61%) no-repeat;
+  background-size: 100% 100%;
+  border-bottom-right-radius: 20px;
+  box-shadow: -4px -4px 6px rgba(0,0,0,0.05);
+  transform: rotate(0deg); */
+
+  /* this makes it a half-circle cut */
+  /* border-radius: 85% 50% 100% 30%; */
+  /* top left */ 
+  /* thin gray border to simulate sticker edge */
+  /* border-left: 1px solid #ddd;
+  border-top: 1px solid #ddd;
+  border-bottom:1px solid #dcdcdc;
+  box-shadow: -4px -4px 6px rgba(0,0,0,0.08) inset; */
+}
+
+.materials {
+  background: #023882; 
+  width: 100vw;
+  padding: 1rem 2rem;
+  text-align: center;
+}
+
+.materials-title {
+  color: #fff;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  font-size: 3rem;
+}
+
+.materials-grid {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.material-card {
+  background: #fff;
+  width: 20rem;
+  height: 20rem;
+  position: relative;
+  border-radius: 2px;
+}
+
+.material-design {
+  position: absolute;
+  left: 0.7rem;
+  top: 0.7rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  object-fit: contain;
+}
+
+.material-name {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-size: 13px;
+  color: #111;
+}
+
+.material-img-placeholder {
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  top: 44px;
+  background: #e6e6e6; /* grey placeholder */
+}
+
+.materials-btn {
+  margin-top: 16px;
+  border: none;
+  background: #fff;
+  color: #f39a2e; /* orange-ish like screenshot */
+  padding: 8px 26px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+
+
+
+
+@media (max-width: 768px) {
+
+  .create-img {
+    width: 60vw;
+    height: 35vh;
+  }
+  .start-project {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .start-right {
+    align-items: flex-right;
+
+  }
+}
