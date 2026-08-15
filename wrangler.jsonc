@@ -1,0 +1,21 @@
+{
+  // Wrangler configuration for React SPA deployment to Cloudflare Workers
+  // Static assets are served from the Vite build output directory (dist/)
+  // with SPA fallback configured for client-side routing
+  
+  "name": "kmu",
+  "type": "javascript",
+  
+  // Serve static assets from the Vite build output directory
+  "assets": {
+    "directory": "dist",
+    // SPA fallback: all non-matching routes return index.html for React Router to handle
+    "not_found_handling": "single-page-application"
+  },
+  
+  // Compatibility settings for Workers runtime
+  "compatibility_date": "2025-08-15",
+  
+  // Minimal configuration - no backend bindings or environment variables needed
+  // The application is purely frontend static assets + React Router client-side routing
+}
