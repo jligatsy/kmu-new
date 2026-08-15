@@ -1,0 +1,232 @@
+/* ============================ Production Intro ============================ */
+.production-intro {
+  max-width: 820px;
+  margin: 0 auto 2em;
+  text-align: center;
+}
+
+.production-intro .eyebrow {
+  margin-bottom: 20px;
+}
+
+.production-intro .eyebrow::before {
+  display: none;
+}
+
+.production-intro h2 {
+  margin-bottom: 18px;
+}
+
+.production-intro .lead {
+  margin-inline: auto;
+}
+
+/* ============================ Workflow ============================ */
+.workflow {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  border: 1px solid var(--ink-200);
+  background: var(--paper);
+}
+
+.workflow-step {
+  position: relative;
+  padding: var(--scale-28);
+  border-right: 1px solid var(--ink-200);
+  min-height: clamp(86.67px, 13.54vw, 260px);
+}
+
+.workflow-step:last-child {
+  border-right: 0;
+}
+
+.workflow-step:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 48px;
+  right: -8px;
+  width: 14px;
+  height: 14px;
+  border-top: 1px solid var(--ink-300);
+  border-right: 1px solid var(--ink-300);
+  background: var(--paper);
+  transform: rotate(45deg);
+  z-index: 1;
+}
+
+.workflow-icon {
+  width: var(--scale-48);
+  height: var(--scale-48);
+  border: 1px solid var(--navy-800);
+  border-radius: 8px;
+  color: var(--navy-800);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--scale-24);
+}
+
+.workflow-index {
+  font-family: var(--font-sans);
+  font-size: var(--text-11);
+  letter-spacing: 0.08em;
+  color: var(--amber-600);
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.workflow-step h3 {
+  color: var(--navy-900);
+  font-size: var(--text-18);
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+
+.workflow-step p {
+  color: var(--ink-700);
+  font-size: var(--text-13);
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* ============================ Capabilities ============================ */
+.production-capabilities {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--scale-24);
+}
+
+.production-card {
+  border: 1px solid var(--ink-200);
+  border-radius: var(--radius);
+  background: var(--paper);
+  padding: var(--scale-32) var(--scale-28);
+}
+
+.production-card svg {
+  color: var(--amber-600);
+  margin-bottom: var(--scale-24);
+}
+
+.production-card h3 {
+  font-size: var(--text-20);
+  letter-spacing: -0.01em;
+  margin-bottom: 12px;
+}
+
+.production-card p {
+  color: var(--ink-700);
+  font-size: var(--text-14);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ============================ Equipment ============================ */
+.equipment-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--scale-24);
+}
+
+.equipment-card {
+  background: var(--paper);
+  border: 1px solid var(--ink-200);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.equipment-photo {
+  aspect-ratio: 4 / 3;
+  background: var(--ink-100);
+}
+
+.equipment-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.equipment-body {
+  padding: var(--scale-24) var(--scale-24) var(--scale-28);
+}
+
+.equipment-body h3 {
+  font-size: var(--text-19);
+  margin-bottom: 10px;
+}
+
+.equipment-body p {
+  color: var(--ink-700);
+  font-size: var(--text-14);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ============================ Finished Gallery ============================ */
+.finished-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--scale-20);
+}
+
+.finished-gallery img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius);
+  background: var(--ink-100);
+}
+
+@media (max-width: 1100px) {
+  .workflow {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .workflow-step:nth-child(3) {
+    border-right: 0;
+  }
+
+  .workflow-step:nth-child(3)::after {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .production-capabilities,
+  .equipment-grid,
+  .finished-gallery {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .workflow,
+  .production-capabilities,
+  .equipment-grid,
+  .finished-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .workflow-step {
+    min-height: auto;
+    border-right: 0;
+    border-bottom: 1px solid var(--ink-200);
+  }
+
+  .workflow-step:last-child {
+    border-bottom: 0;
+  }
+
+  .workflow-step:not(:last-child)::after {
+    top: auto;
+    right: auto;
+    left: 40px;
+    bottom: -8px;
+    transform: rotate(135deg);
+  }
+
+  .workflow-step:nth-child(3)::after {
+    display: block;
+  }
+}
